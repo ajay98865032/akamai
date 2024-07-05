@@ -1,97 +1,42 @@
-# Spring Boot H2 Database CRUD example: Building Rest API with Spring Data JPA
+Task overview:
 
-For more detail, please visit:
-> [Spring Boot JPA + H2 example: Build a CRUD Rest APIs](https://www.bezkoder.com/spring-boot-jpa-h2-example/)
+Please prepare a Spring Boot maven project that for the following object (object defined in pseudo-code) will:
 
-In this tutorial, we're gonna build a Spring Boot Rest CRUD API example with Maven that use Spring Data JPA to interact with H2 database. You'll know:
 
-- How to configure Spring Data, JPA, Hibernate to work with Database
-- How to define Data Models and Repository interfaces
-- Way to create Spring Rest Controller to process HTTP requests
-- Way to use Spring Data JPA to interact with H2 Database
+Expose an API to return posts with the top ten highest view counts per postCategory
+Expose an API to search posts by author
 
-Front-end that works well with this Back-end
-> [Angular 8](https://www.bezkoder.com/angular-crud-app/) / [Angular 10](https://www.bezkoder.com/angular-10-crud-app/) / [Angular 11](https://www.bezkoder.com/angular-11-crud-app/) / [Angular 12](https://www.bezkoder.com/angular-12-crud-app/) / [Angular 13](https://www.bezkoder.com/angular-13-crud-example/) / [Angular 14](https://www.bezkoder.com/angular-14-crud-example/) / [Angular 15](https://www.bezkoder.com/angular-15-crud-example/) / [Angular 16](https://www.bezkoder.com/angular-16-crud-example/) / [Angular 17 Client](https://www.bezkoder.com/angular-17-crud-example/)
+The solution should be as most production ready as possible so should contain all the features that would be considered essential for that.
+The application should integrate with a database (you can use H2 integrated in-memory database) to facilitate operations exposed using the API
+Please provide the test coverage and all other project facilities that are important in your opinion
+When designing the API please consider scalability and performance aspects. Please note that the number of posts can be significant (like 10^9)
+The following script can be used as a starting point to feed the database:
 
-> [Vue 2 Client](https://www.bezkoder.com/vue-js-crud-app/) / [Vue 3 Client](https://www.bezkoder.com/vue-3-crud/) / [Vuetify Client](https://www.bezkoder.com/vuetify-data-table-example/)
+INSERT INTO SocialNetwork (ID,AUTHOR, CONTENT, POST_CATEGORY, POST_DATE, VIEW_COUNT) VALUES
 
-> [React Client](https://www.bezkoder.com/react-hooks-crud-axios-api/) / [React Redux Client](https://www.bezkoder.com/redux-toolkit-crud-react-hooks/)
+(1,'Alice', 'Check out my new song!','Music', '2024-01-15',1570),
 
-More Practice:
-> [Spring Boot Validate Request Body](https://www.bezkoder.com/spring-boot-validate-request-body/)
+(2,'Bob', 'Just finished an epic gaming session!','Gaming','2024-02-22' 2215),
 
-> [Spring Boot File upload example with Multipart File](https://www.bezkoder.com/spring-boot-file-upload/)
+(3,'Charlie', 'Breaking news: Major event happening now!','News','2024-03-10',3050),
 
-> [Spring Boot Pagination & Filter example | Spring JPA, Pageable](https://www.bezkoder.com/spring-boot-pagination-filter-jpa-pageable/)
+(4,'Diana', 'Top 10 movies to watch this summer.','Entertainment','2024-04-18,1725),
 
-> [Spring Data JPA Sort/Order by multiple Columns | Spring Boot](https://www.bezkoder.com/spring-data-sort-multiple-columns/)
+(5,'Eve', 'My concert was amazing last night!','Music','2024-05-05', 2850),
 
-> [Spring Boot Repository Unit Test with @DataJpaTest](https://www.bezkoder.com/spring-boot-unit-test-jpa-repo-datajpatest/)
+(6,'Frank', 'Tips and tricks for the latest game.','Gaming','2024-06-23',2380),
 
-> [Spring Boot Rest Controller Unit Test with @WebMvcTest](https://www.bezkoder.com/spring-boot-webmvctest/)
+(7,'Grace', 'Election results are in.','News','2024-07-01', 3190),
 
-> Cache the result: [Spring Boot Redis Cache example](https://www.bezkoder.com/spring-boot-redis-cache-example/)
+(8,'Heidi', 'Best TV shows to binge-watch.','Entertainment', '2024-08-14',1920),
 
-> Documentation: [Spring Boot with Swagger 3 example](https://www.bezkoder.com/spring-boot-swagger-3/)
+(9,'Ivan', 'Album release date announced!', 'Music','2024-09-09',2125),
 
-> Reactive Rest API: [Spring Boot WebFlux example](https://www.bezkoder.com/spring-boot-webflux-rest-api/)
+(10,'Judy', 'Game review: The best and the worst.','Gaming','2024-10-25',2480),
 
-> [Deploy Spring Boot App on AWS – Elastic Beanstalk](https://www.bezkoder.com/deploy-spring-boot-aws-eb/)
+(11,'Karl', 'Weather update: Severe storm approaching.','News','2024-11-11,2730),
 
-Exception Handling:
-> [Spring Boot @ControllerAdvice & @ExceptionHandler example](https://www.bezkoder.com/spring-boot-controlleradvice-exceptionhandler/)
+(12,'Laura', 'Celebrity gossip: Who wore it best?','Entertainment', '2024-12-05',1650);
 
-> [@RestControllerAdvice example in Spring Boot](https://www.bezkoder.com/spring-boot-restcontrolleradvice/)
 
-Associations:
-> [Spring Boot One To One example with Spring JPA, Hibernate](https://www.bezkoder.com/jpa-one-to-one/)
-
-> [Spring Boot One To Many example with Spring JPA, Hibernate](https://www.bezkoder.com/jpa-one-to-many/)
-
-> [Spring Boot Many To Many example with Spring JPA, Hibernate](https://www.bezkoder.com/jpa-many-to-many/)
-
-Other databases:
-> [Spring Boot JPA + MySQL: CRUD Rest API example](https://www.bezkoder.com/spring-boot-jpa-crud-rest-api/)
-
-> [Spring Boot JPA + PostgreSQL: CRUD Rest API example](https://www.bezkoder.com/spring-boot-postgresql-example/)
-
-Security:
-> [Spring Boot + Spring Security JWT Authentication & Authorization](https://www.bezkoder.com/spring-boot-jwt-authentication/)
-
-Fullstack:
-> [Vue + Spring Boot example](https://www.bezkoder.com/spring-boot-vue-js-crud-example/)
-
-> [Angular 8 + Spring Boot example](https://www.bezkoder.com/angular-spring-boot-crud/)
-
-> [Angular 10 + Spring Boot example](https://www.bezkoder.com/angular-10-spring-boot-crud/)
-
-> [Angular 11 + Spring Boot example](https://www.bezkoder.com/angular-11-spring-boot-crud/)
-
-> [Angular 12 + Spring Boot example](https://www.bezkoder.com/angular-12-spring-boot-crud/)
-
-> [Angular 13 + Spring Boot example](https://www.bezkoder.com/spring-boot-angular-13-crud/)
-
-> [Angular 14 + Spring Boot example](https://www.bezkoder.com/spring-boot-angular-14-crud/)
-
-> [Angular 15 + Spring Boot example](https://www.bezkoder.com/spring-boot-angular-15-crud/)
-
-> [Angular 16 + Spring Boot example](https://www.bezkoder.com/spring-boot-angular-16-crud/)
-
-> [Angular 17 + Spring Boot example](https://www.bezkoder.com/spring-boot-angular-17-crud/)
-
-> [React + Spring Boot + MySQL example](https://www.bezkoder.com/react-spring-boot-crud/)
-
-> [React + Spring Boot + PostgreSQL example](https://www.bezkoder.com/spring-boot-react-postgresql/)
-
-Run both Back-end & Front-end in one place:
-> [Integrate Angular with Spring Boot Rest API](https://www.bezkoder.com/integrate-angular-spring-boot/)
-
-> [Integrate React.js with Spring Boot Rest API](https://www.bezkoder.com/integrate-reactjs-spring-boot/)
-
-> [Integrate Vue.js with Spring Boot Rest API](https://www.bezkoder.com/integrate-vue-spring-boot/)
-
-## Run Spring Boot application
-```
-mvn spring-boot:run
-```
 
