@@ -1,0 +1,20 @@
+2024-07-05 17:33:11 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO SocialNetwork (ID,AUTHOR, CONTENT, POST_CATEGORY, POST_DATE, VIEW_COUNT) VALUES\000d\000a\000d\000a(1,'Alice', 'Check out my new song!','Music', '2024-01-15',1570),[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO SocialNetwork (ID,AUTHOR, CONTENT, POST_CATEGORY, POST_DATE, VIEW_COUNT) VALUES
+
+(1,'Alice', 'Check out my new song!','Music', '2024-01-15',1570), [42001-214]
+2024-07-05 17:34:16 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO SocialNetwork (ID,AUTHOR, CONTENT, POST_CATEGORY, POST_DATE, VIEW_COUNT) VALUES\000d\000a\000d\000a(2,'Bob', 'Just finished an epic gaming session!','Gaming','2024-02-22' [*]2215)"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+INSERT INTO SocialNetwork (ID,AUTHOR, CONTENT, POST_CATEGORY, POST_DATE, VIEW_COUNT) VALUES
+
+(2,'Bob', 'Just finished an epic gaming session!','Gaming','2024-02-22' 2215) [42001-214]
+2024-07-05 17:34:52 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO SocialNetwork (ID,AUTHOR, CONTENT, POST_CATEGORY, POST_DATE, VIEW_COUNT) VALUES\000d\000a\000d\000a(4,'Diana', 'Top 10 movies to watch this summer.','Entertainment',[*]'2024-04-18,1725);"; SQL statement:
+INSERT INTO SocialNetwork (ID,AUTHOR, CONTENT, POST_CATEGORY, POST_DATE, VIEW_COUNT) VALUES
+
+(4,'Diana', 'Top 10 movies to watch this summer.','Entertainment','2024-04-18,1725); [42000-214]
+2024-07-05 17:35:59 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO SocialNetwork (ID,AUTHOR, CONTENT, POST_CATEGORY, POST_DATE, VIEW_COUNT) VALUES\000d\000a\000d\000a(11,'Karl', 'Weather update: Severe storm approaching.','News','2024-11-11',2730),[*]"; expected "ROW (, (, DEFAULT, INTERSECTS (, NOT, EXISTS, UNIQUE, INTERSECTS"; SQL statement:
+INSERT INTO SocialNetwork (ID,AUTHOR, CONTENT, POST_CATEGORY, POST_DATE, VIEW_COUNT) VALUES
+
+(11,'Karl', 'Weather update: Severe storm approaching.','News','2024-11-11',2730), [42001-214]

@@ -1,0 +1,281 @@
+2024-07-05 16:49:38 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "SOCIALNETWORKPOST" not found; SQL statement:
+INSERT INTO SocialNetworkPost (postDate, postCategory, author, content, viewCount) VALUES
+
+('2024-01-15', 'Music', 'Alice', 'Check out my new song!', 1570),
+
+('2024-02-22', 'Gaming', 'Bob', 'Just finished an epic gaming session!', 2215),
+
+('2024-03-10', 'News', 'Charlie', 'Breaking news: Major event happening now!', 3050),
+
+('2024-04-18', 'Entertainment', 'Diana', 'Top 10 movies to watch this summer.', 1725),
+
+('2024-05-05', 'Music', 'Eve', 'My concert was amazing last night!', 2850),
+
+('2024-06-23', 'Gaming', 'Frank', 'Tips and tricks for the latest game.', 2380),
+
+('2024-07-01', 'News', 'Grace', 'Election results are in.', 3190),
+
+('2024-08-14', 'Entertainment', 'Heidi', 'Best TV shows to binge-watch.', 1920),
+
+('2024-09-09', 'Music', 'Ivan', 'Album release date announced!', 2125),
+
+('2024-10-25', 'Gaming', 'Judy', 'Game review: The best and the worst.', 2480),
+
+('2024-11-11', 'News', 'Karl', 'Weather update: Severe storm approaching.', 2730),
+
+('2024-12-05', 'Entertainment', 'Laura', 'Celebrity gossip: Who wore it best?', 1650),
+
+('2024-01-20', 'Music', 'Mallory', 'Join me live for a music session.', 2340),
+
+('2024-02-14', 'Gaming', 'Nina', 'Top 5 games to play this month.', 2650),
+
+('2024-03-18', 'News', 'Oscar', 'Tech news: Latest gadget reviews.', 3130),
+
+('2024-04-27', 'Entertainment', 'Paul', 'Must-see theater performances.', 1840),
+
+('2024-05-30', 'Music', 'Quinn', 'New single dropping soon!', 2910),
+
+('2024-06-15', 'Gaming', 'Rita', 'Livestreaming my gameplay now!', 2320),
+
+('2024-07-23', 'News', 'Sam', 'Local news: Community event highlights.', 2690),
+
+('2024-08-10', 'Entertainment', 'Tina', 'Behind the scenes of my latest video.', 2025) [42102-214]
+2024-07-05 16:50:00 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Column "POSTDATE" not found; SQL statement:
+INSERT INTO SocialNetwork (postDate, postCategory, author, content, viewCount) VALUES
+
+('2024-01-15', 'Music', 'Alice', 'Check out my new song!', 1570),
+
+('2024-02-22', 'Gaming', 'Bob', 'Just finished an epic gaming session!', 2215),
+
+('2024-03-10', 'News', 'Charlie', 'Breaking news: Major event happening now!', 3050),
+
+('2024-04-18', 'Entertainment', 'Diana', 'Top 10 movies to watch this summer.', 1725),
+
+('2024-05-05', 'Music', 'Eve', 'My concert was amazing last night!', 2850),
+
+('2024-06-23', 'Gaming', 'Frank', 'Tips and tricks for the latest game.', 2380),
+
+('2024-07-01', 'News', 'Grace', 'Election results are in.', 3190),
+
+('2024-08-14', 'Entertainment', 'Heidi', 'Best TV shows to binge-watch.', 1920),
+
+('2024-09-09', 'Music', 'Ivan', 'Album release date announced!', 2125),
+
+('2024-10-25', 'Gaming', 'Judy', 'Game review: The best and the worst.', 2480),
+
+('2024-11-11', 'News', 'Karl', 'Weather update: Severe storm approaching.', 2730),
+
+('2024-12-05', 'Entertainment', 'Laura', 'Celebrity gossip: Who wore it best?', 1650),
+
+('2024-01-20', 'Music', 'Mallory', 'Join me live for a music session.', 2340),
+
+('2024-02-14', 'Gaming', 'Nina', 'Top 5 games to play this month.', 2650),
+
+('2024-03-18', 'News', 'Oscar', 'Tech news: Latest gadget reviews.', 3130),
+
+('2024-04-27', 'Entertainment', 'Paul', 'Must-see theater performances.', 1840),
+
+('2024-05-30', 'Music', 'Quinn', 'New single dropping soon!', 2910),
+
+('2024-06-15', 'Gaming', 'Rita', 'Livestreaming my gameplay now!', 2320),
+
+('2024-07-23', 'News', 'Sam', 'Local news: Community event highlights.', 2690),
+
+('2024-08-10', 'Entertainment', 'Tina', 'Behind the scenes of my latest video.', 2025) [42122-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:502)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.table.Table.getColumn(Table.java:749)
+	at org.h2.command.Parser.parseColumn(Parser.java:1256)
+	at org.h2.command.Parser.parseColumnList(Parser.java:1241)
+	at org.h2.command.Parser.parseInsert(Parser.java:1641)
+	at org.h2.command.Parser.parsePrepared(Parser.java:814)
+	at org.h2.command.Parser.parse(Parser.java:689)
+	at org.h2.command.Parser.parse(Parser.java:661)
+	at org.h2.command.Parser.prepareCommand(Parser.java:569)
+	at org.h2.engine.SessionLocal.prepareLocal(SessionLocal.java:631)
+	at org.h2.engine.SessionLocal.prepareCommand(SessionLocal.java:554)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1116)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:237)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp.query(WebApp.java:1113)
+	at org.h2.server.web.WebApp.process(WebApp.java:244)
+	at org.h2.server.web.WebApp.processRequest(WebApp.java:176)
+	at org.h2.server.web.JakartaWebServlet.doGet(JakartaWebServlet.java:129)
+	at org.h2.server.web.JakartaWebServlet.doPost(JakartaWebServlet.java:166)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:590)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:205)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:174)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:149)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:166)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:482)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:390)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:894)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2024-07-05 17:02:48 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO SocialNetwork (AUTHOR, CONTENT, POST_CATEGORY, POST_DATE, VIEW_COUNT) VALUES\000d\000a\000d\000a(1,'Alice', 'Check out my new song!','Music', '2024-01-15',1570),\000d\000a\000d\000a(2,'Bob', 'Just finished an epic gaming session!','Gaming','2024-02-22' 2215),\000d\000a\000d\000a(3,'Charlie', 'Breaking news: Major event happening now!','News','2024-03-10',3050),\000d\000a\000d\000a(4,'Diana', 'Top 10 movies to watch this summer.','Entertainment','2024-04-18,1725),\000d\000a\000d\000a(5,'Eve', 'My concert was amazing last night[*]!','Music','2024-05-05', 2850),\000d\000a\000d\000a(6,'Frank', 'Tips and tricks for the latest game.','Gaming','2024-06-23',2380),\000d\000a\000d\000a(7,'Grace', 'Election results are in.','News','2024-07-01', 3190),\000d\000a\000d\000a(8,'Heidi', 'Best TV shows to binge-watch.','Entertainment', '2024-08-14',1920),\000d\000a\000d\000a(9,'Ivan', 'Album release date announced!', 'Music','2024-09-09',2125),\000d\000a\000d\000a(10,'Judy', 'Game review: The best and the worst.','Gaming','2024-10-25',2480),\000d\000a\000d\000a(11,'Karl', 'Weather update: Severe storm approaching.','News','2024-11-11,2730),\000d\000a\000d\000a(12,'Laura', 'Celebrity gossip: Who wore it best?','Entertainment', '2024-12-05',1650)"; SQL statement:
+INSERT INTO SocialNetwork (AUTHOR, CONTENT, POST_CATEGORY, POST_DATE, VIEW_COUNT) VALUES
+
+(1,'Alice', 'Check out my new song!','Music', '2024-01-15',1570),
+
+(2,'Bob', 'Just finished an epic gaming session!','Gaming','2024-02-22' 2215),
+
+(3,'Charlie', 'Breaking news: Major event happening now!','News','2024-03-10',3050),
+
+(4,'Diana', 'Top 10 movies to watch this summer.','Entertainment','2024-04-18,1725),
+
+(5,'Eve', 'My concert was amazing last night!','Music','2024-05-05', 2850),
+
+(6,'Frank', 'Tips and tricks for the latest game.','Gaming','2024-06-23',2380),
+
+(7,'Grace', 'Election results are in.','News','2024-07-01', 3190),
+
+(8,'Heidi', 'Best TV shows to binge-watch.','Entertainment', '2024-08-14',1920),
+
+(9,'Ivan', 'Album release date announced!', 'Music','2024-09-09',2125),
+
+(10,'Judy', 'Game review: The best and the worst.','Gaming','2024-10-25',2480),
+
+(11,'Karl', 'Weather update: Severe storm approaching.','News','2024-11-11,2730),
+
+(12,'Laura', 'Celebrity gossip: Who wore it best?','Entertainment', '2024-12-05',1650) [42000-214]
+2024-07-05 17:03:33 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO SocialNetwork (ID,AUTHOR, CONTENT, POST_CATEGORY, POST_DATE, VIEW_COUNT) VALUES\000d\000a\000d\000a(1,'Alice', 'Check out my new song!','Music', '2024-01-15',1570),\000d\000a\000d\000a(2,'Bob', 'Just finished an epic gaming session!','Gaming','2024-02-22' 2215),\000d\000a\000d\000a(3,'Charlie', 'Breaking news: Major event happening now!','News','2024-03-10',3050),\000d\000a\000d\000a(4,'Diana', 'Top 10 movies to watch this summer.','Entertainment','2024-04-18,1725),\000d\000a\000d\000a(5,'Eve', 'My concert was amazing last night[*]!','Music','2024-05-05', 2850),\000d\000a\000d\000a(6,'Frank', 'Tips and tricks for the latest game.','Gaming','2024-06-23',2380),\000d\000a\000d\000a(7,'Grace', 'Election results are in.','News','2024-07-01', 3190),\000d\000a\000d\000a(8,'Heidi', 'Best TV shows to binge-watch.','Entertainment', '2024-08-14',1920),\000d\000a\000d\000a(9,'Ivan', 'Album release date announced!', 'Music','2024-09-09',2125),\000d\000a\000d\000a(10,'Judy', 'Game review: The best and the worst.','Gaming','2024-10-25',2480),\000d\000a\000d\000a(11,'Karl', 'Weather update: Severe storm approaching.','News','2024-11-11,2730),\000d\000a\000d\000a(12,'Laura', 'Celebrity gossip: Who wore it best?','Entertainment', '2024-12-05',1650)"; SQL statement:
+INSERT INTO SocialNetwork (ID,AUTHOR, CONTENT, POST_CATEGORY, POST_DATE, VIEW_COUNT) VALUES
+
+(1,'Alice', 'Check out my new song!','Music', '2024-01-15',1570),
+
+(2,'Bob', 'Just finished an epic gaming session!','Gaming','2024-02-22' 2215),
+
+(3,'Charlie', 'Breaking news: Major event happening now!','News','2024-03-10',3050),
+
+(4,'Diana', 'Top 10 movies to watch this summer.','Entertainment','2024-04-18,1725),
+
+(5,'Eve', 'My concert was amazing last night!','Music','2024-05-05', 2850),
+
+(6,'Frank', 'Tips and tricks for the latest game.','Gaming','2024-06-23',2380),
+
+(7,'Grace', 'Election results are in.','News','2024-07-01', 3190),
+
+(8,'Heidi', 'Best TV shows to binge-watch.','Entertainment', '2024-08-14',1920),
+
+(9,'Ivan', 'Album release date announced!', 'Music','2024-09-09',2125),
+
+(10,'Judy', 'Game review: The best and the worst.','Gaming','2024-10-25',2480),
+
+(11,'Karl', 'Weather update: Severe storm approaching.','News','2024-11-11,2730),
+
+(12,'Laura', 'Celebrity gossip: Who wore it best?','Entertainment', '2024-12-05',1650) [42000-214]
+2024-07-05 17:04:35 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO SocialNetwork (ID,AUTHOR, CONTENT, POST_CATEGORY, POST_DATE, VIEW_COUNT) VALUES\000d\000a\000d\000a(2,'Bob', 'Just finished an epic gaming session!','Gaming','2024-02-22' [*]2215)"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+INSERT INTO SocialNetwork (ID,AUTHOR, CONTENT, POST_CATEGORY, POST_DATE, VIEW_COUNT) VALUES
+
+(2,'Bob', 'Just finished an epic gaming session!','Gaming','2024-02-22' 2215) [42001-214]
+2024-07-05 17:05:15 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO SocialNetwork (ID,AUTHOR, CONTENT, POST_CATEGORY, POST_DATE, VIEW_COUNT) VALUES\000d\000a\000d\000a\000d\000a(2,'Bob', 'Just finished an epic gaming session!','Gaming','2024-02-22' 2215),\000d\000a\000d\000a(3,'Charlie', 'Breaking news: Major event happening now!','News','2024-03-10',3050),\000d\000a\000d\000a(4,'Diana', 'Top 10 movies to watch this summer.','Entertainment','2024-04-18,1725),\000d\000a\000d\000a(5,'Eve', 'My concert was amazing last night[*]!','Music','2024-05-05', 2850),\000d\000a\000d\000a(6,'Frank', 'Tips and tricks for the latest game.','Gaming','2024-06-23',2380),\000d\000a\000d\000a(7,'Grace', 'Election results are in.','News','2024-07-01', 3190),\000d\000a\000d\000a(8,'Heidi', 'Best TV shows to binge-watch.','Entertainment', '2024-08-14',1920),\000d\000a\000d\000a(9,'Ivan', 'Album release date announced!', 'Music','2024-09-09',2125),\000d\000a\000d\000a(10,'Judy', 'Game review: The best and the worst.','Gaming','2024-10-25',2480),\000d\000a\000d\000a(11,'Karl', 'Weather update: Severe storm approaching.','News','2024-11-11,2730),\000d\000a\000d\000a(12,'Laura', 'Celebrity gossip: Who wore it best?','Entertainment', '2024-12-05',1650)"; SQL statement:
+INSERT INTO SocialNetwork (ID,AUTHOR, CONTENT, POST_CATEGORY, POST_DATE, VIEW_COUNT) VALUES
+
+
+(2,'Bob', 'Just finished an epic gaming session!','Gaming','2024-02-22' 2215),
+
+(3,'Charlie', 'Breaking news: Major event happening now!','News','2024-03-10',3050),
+
+(4,'Diana', 'Top 10 movies to watch this summer.','Entertainment','2024-04-18,1725),
+
+(5,'Eve', 'My concert was amazing last night!','Music','2024-05-05', 2850),
+
+(6,'Frank', 'Tips and tricks for the latest game.','Gaming','2024-06-23',2380),
+
+(7,'Grace', 'Election results are in.','News','2024-07-01', 3190),
+
+(8,'Heidi', 'Best TV shows to binge-watch.','Entertainment', '2024-08-14',1920),
+
+(9,'Ivan', 'Album release date announced!', 'Music','2024-09-09',2125),
+
+(10,'Judy', 'Game review: The best and the worst.','Gaming','2024-10-25',2480),
+
+(11,'Karl', 'Weather update: Severe storm approaching.','News','2024-11-11,2730),
+
+(12,'Laura', 'Celebrity gossip: Who wore it best?','Entertainment', '2024-12-05',1650) [42000-214]
+2024-07-05 17:05:58 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO SocialNetwork (ID,AUTHOR, CONTENT, POST_CATEGORY, POST_DATE, VIEW_COUNT) VALUES\000d\000a\000d\000a\000d\000a(2,'Bob', 'Just finished an epic gaming session!','Gaming','2024-02-22' [*]2215),\000d\000a\000d\000a(3,'Charlie', 'Breaking news: Major event happening now!','News','2024-03-10',3050),\000d\000a\000d\000a(4,'Diana', 'Top 10 movies to watch this summer.','Entertainment','2024-04-18',1725),\000d\000a\000d\000a(5,'Eve', 'My concert was amazing last night!','Music','2024-05-05', 2850),\000d\000a\000d\000a(6,'Frank', 'Tips and tricks for the latest game.','Gaming','2024-06-23',2380),\000d\000a\000d\000a(7,'Grace', 'Election results are in.','News','2024-07-01', 3190),\000d\000a\000d\000a(8,'Heidi', 'Best TV shows to binge-watch.','Entertainment', '2024-08-14',1920),\000d\000a\000d\000a(9,'Ivan', 'Album release date announced!', 'Music','2024-09-09',2125),\000d\000a\000d\000a(10,'Judy', 'Game review: The best and the worst.','Gaming','2024-10-25',2480),\000d\000a\000d\000a(11,'Karl', 'Weather update: Severe storm approaching.','News','2024-11-11',2730),\000d\000a\000d\000a(12,'Laura', 'Celebrity gossip: Who wore it best?','Entertainment', '2024-12-05',1650)"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+INSERT INTO SocialNetwork (ID,AUTHOR, CONTENT, POST_CATEGORY, POST_DATE, VIEW_COUNT) VALUES
+
+
+(2,'Bob', 'Just finished an epic gaming session!','Gaming','2024-02-22' 2215),
+
+(3,'Charlie', 'Breaking news: Major event happening now!','News','2024-03-10',3050),
+
+(4,'Diana', 'Top 10 movies to watch this summer.','Entertainment','2024-04-18',1725),
+
+(5,'Eve', 'My concert was amazing last night!','Music','2024-05-05', 2850),
+
+(6,'Frank', 'Tips and tricks for the latest game.','Gaming','2024-06-23',2380),
+
+(7,'Grace', 'Election results are in.','News','2024-07-01', 3190),
+
+(8,'Heidi', 'Best TV shows to binge-watch.','Entertainment', '2024-08-14',1920),
+
+(9,'Ivan', 'Album release date announced!', 'Music','2024-09-09',2125),
+
+(10,'Judy', 'Game review: The best and the worst.','Gaming','2024-10-25',2480),
+
+(11,'Karl', 'Weather update: Severe storm approaching.','News','2024-11-11',2730),
+
+(12,'Laura', 'Celebrity gossip: Who wore it best?','Entertainment', '2024-12-05',1650) [42001-214]
+2024-07-05 17:06:13 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO SocialNetwork (ID,AUTHOR, CONTENT, POST_CATEGORY, POST_DATE, VIEW_COUNT) VALUES\000d\000a\000d\000a\000d\000a(2,'Bob', 'Just finished an epic gaming session!','Gaming','2024-02-22' [*]2215)"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+INSERT INTO SocialNetwork (ID,AUTHOR, CONTENT, POST_CATEGORY, POST_DATE, VIEW_COUNT) VALUES
+
+
+(2,'Bob', 'Just finished an epic gaming session!','Gaming','2024-02-22' 2215) [42001-214]
+2024-07-05 17:06:13 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "([*]"; expected "(, SELECT, TABLE, VALUES"; SQL statement:
+( [42001-214]
+2024-07-05 17:06:23 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO SocialNetwork (ID,AUTHOR, CONTENT, POST_CATEGORY, POST_DATE, VIEW_COUNT) VALUES\000d\000a\000d\000a\000d\000a(2,'Bob', 'Just finished an epic gaming session!','Gaming','2024-02-22' [*]2215)"; expected "[, ::, AT, FORMAT, *, /, %, +, -, ||, NOT, IS, ILIKE, REGEXP, AND, OR, ,, )"; SQL statement:
+INSERT INTO SocialNetwork (ID,AUTHOR, CONTENT, POST_CATEGORY, POST_DATE, VIEW_COUNT) VALUES
+
+
+(2,'Bob', 'Just finished an epic gaming session!','Gaming','2024-02-22' 2215) [42001-214]
+2024-07-05 17:07:03 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO SocialNetwork (ID,AUTHOR, CONTENT, POST_CATEGORY, POST_DATE, VIEW_COUNT) VALUES\000d\000a\000d\000a\000d\000a(4,'Diana', 'Top 10 movies to watch this summer.','Entertainment',[*]'2024-04-18,1725);"; SQL statement:
+INSERT INTO SocialNetwork (ID,AUTHOR, CONTENT, POST_CATEGORY, POST_DATE, VIEW_COUNT) VALUES
+
+
+(4,'Diana', 'Top 10 movies to watch this summer.','Entertainment','2024-04-18,1725); [42000-214]
+2024-07-05 17:08:25 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "INSERT INTO SocialNetwork (ID,AUTHOR, CONTENT, POST_CATEGORY, POST_DATE, VIEW_COUNT) VALUES\000d\000a(11,'Karl', 'Weather update: Severe storm approaching.','News',[*]'2024-11-11,2730);"; SQL statement:
+INSERT INTO SocialNetwork (ID,AUTHOR, CONTENT, POST_CATEGORY, POST_DATE, VIEW_COUNT) VALUES
+(11,'Karl', 'Weather update: Severe storm approaching.','News','2024-11-11,2730); [42000-214]
